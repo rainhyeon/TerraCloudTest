@@ -25,6 +25,6 @@ resource "aws_vpc" "this" {
   enable_dns_support   = true
 
   tags = {
-    Name = "hat_vpc"
+    Name = "hat2_vpc"
   }
 }
