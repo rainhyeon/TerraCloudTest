@@ -6,7 +6,7 @@ variable "region" {
 
 variable "db_name" {
   description = "DB name"
-  default     = "pizza5_db"
+  default     = "pizza4_db"
 }
 
 variable "db_username" {
@@ -46,7 +46,7 @@ resource "aws_vpc" "this" {
   enable_dns_support   = true
 
   tags = {
-    Name = "pizza5_vpc"
+    Name = "pizza4_vpc"
   }
 }
 
@@ -54,7 +54,7 @@ resource "aws_internet_gateway" "this" {
   vpc_id = aws_vpc.this.id
 
   tags = {
-    Name = "pizza5_igw"
+    Name = "pizza4_igw"
   }
 }
 
@@ -69,7 +69,7 @@ resource "aws_subnet" "public_1" {
   depends_on = [aws_internet_gateway.this]
 
   tags = {
-    Name = "pizza5_subnet_public_1"
+    Name = "pizza4_subnet_public_1"
   }
 }
 
@@ -83,7 +83,7 @@ resource "aws_subnet" "public_2" {
   depends_on = [aws_internet_gateway.this]
 
   tags = {
-    Name = "pizza5_subnet_public_2"
+    Name = "pizza4_subnet_public_2"
   }
 }
 
@@ -94,7 +94,7 @@ resource "aws_subnet" "web_1" {
   enable_resource_name_dns_a_record_on_launch = true
 
   tags = {
-    Name = "pizza5_subnet_web_1"
+    Name = "pizza4_subnet_web_1"
   }
 }
 
