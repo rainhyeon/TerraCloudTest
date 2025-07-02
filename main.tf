@@ -46,7 +46,7 @@ resource "aws_vpc" "this" {
   enable_dns_support   = true
 
   tags = {
-    Name = "pizza4_vpc"
+    Name = "pizza5_vpc"
   }
 }
 
