@@ -46,7 +46,7 @@ resource "aws_vpc" "this" {
   enable_dns_support   = true
 
   tags = {
-    Name = "pizza4_vpc"
+    Name = "pizza5_vpc"
   }
 }
 
@@ -54,7 +54,7 @@ resource "aws_internet_gateway" "this" {
   vpc_id = aws_vpc.this.id
 
   tags = {
-    Name = "pizza4_igw"
+    Name = "pizza5_igw"
   }
 }
 
@@ -69,7 +69,7 @@ resource "aws_subnet" "public_1" {
   depends_on = [aws_internet_gateway.this]
 
   tags = {
-    Name = "pizza4_subnet_public_1"
+    Name = "pizza5_subnet_public_1"
   }
 }
 
@@ -83,7 +83,7 @@ resource "aws_subnet" "public_2" {
   depends_on = [aws_internet_gateway.this]
 
   tags = {
-    Name = "pizza4_subnet_public_2"
+    Name = "pizza5_subnet_public_2"
   }
 }
 
@@ -94,7 +94,7 @@ resource "aws_subnet" "web_1" {
   enable_resource_name_dns_a_record_on_launch = true
 
   tags = {
-    Name = "pizza4_subnet_web_1"
+    Name = "pizza5_subnet_web_1"
   }
 }
 
@@ -105,7 +105,7 @@ resource "aws_subnet" "web_2" {
   enable_resource_name_dns_a_record_on_launch = true
 
   tags = {
-    Name = "pizza4_subnet_web_2"
+    Name = "pizza5_subnet_web_2"
   }
 }
 
@@ -116,7 +116,7 @@ resource "aws_subnet" "db_1" {
   enable_resource_name_dns_a_record_on_launch = true
 
   tags = {
-    Name = "pizza4_subnet_db_1"
+    Name = "pizza5_subnet_db_1"
   }
 }
 
@@ -127,7 +127,7 @@ resource "aws_subnet" "db_2" {
   enable_resource_name_dns_a_record_on_launch = true
 
   tags = {
-    Name = "pizza4_subnet_db_2"
+    Name = "pizza5_subnet_db_2"
   }
 }
 
@@ -136,7 +136,7 @@ resource "aws_eip" "nat_1" {
   domain = "vpc"
 
   tags = {
-    Name = "pizza4_eip_nat_1"
+    Name = "pizza5_eip_nat_1"
   }
 }
 
@@ -144,7 +144,7 @@ resource "aws_eip" "nat_2" {
   domain = "vpc"
 
   tags = {
-    Name = "pizza4_eip_nat_2"
+    Name = "pizza5_eip_nat_2"
   }
 }
 
@@ -153,7 +153,7 @@ resource "aws_nat_gateway" "nat_1" {
   subnet_id     = aws_subnet.public_1.id
 
   tags = {
-    Name = "pizza4_natgw_1"
+    Name = "pizza5_natgw_1"
   }
 
   depends_on = [aws_internet_gateway.this]
@@ -164,7 +164,7 @@ resource "aws_nat_gateway" "nat_2" {
   subnet_id     = aws_subnet.public_2.id
 
   tags = {
-    Name = "pizza4_natgw_2"
+    Name = "pizza5_natgw_2"
   }
 
   depends_on = [aws_internet_gateway.this]
@@ -180,7 +180,7 @@ resource "aws_route_table" "public" {
   }
 
   tags = {
-    Name = "pizza4_rt_public"
+    Name = "pizza5_rt_public"
   }
 }
 
