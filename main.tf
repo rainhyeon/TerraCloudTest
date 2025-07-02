@@ -184,7 +184,7 @@ resource "aws_route_table" "public" {
   }
 }
 
-resource "aws_route_table" "web" {
+resource "aws_route_table" "pizza4_rt_web_1" {
   vpc_id = aws_vpc.this.id
 
   route {
@@ -402,7 +402,7 @@ resource "aws_instance" "bastion" {
   }
 }
 
-resource "aws_instance" "web_1" {
+resource "aws_instance" "pizza4_web_1" {
   ami                    = "ami-08943a151bd468f4e"
   instance_type          = "t3.medium"
   subnet_id              = aws_subnet.web_1.id
@@ -414,7 +414,7 @@ resource "aws_instance" "web_1" {
   }
 }
 
-resource "aws_instance" "web_2" {
+resource "aws_instance" "pizza4_web_2" {
   ami                    = "ami-08943a151bd468f4e"
   instance_type          = "t3.medium"
   subnet_id              = aws_subnet.web_2.id
